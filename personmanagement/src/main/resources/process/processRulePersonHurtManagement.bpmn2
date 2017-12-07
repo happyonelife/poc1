@@ -44,8 +44,8 @@
       <conditionExpression xsi:type="tFormalExpression" >return ruleXOMHelper.inPutXom.taskCatalog.equals("PersonAppendLossApproval");</conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-3-_jbpm-unique-11" sourceRef="_jbpm-unique-3" targetRef="_jbpm-unique-11" />
-    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-11" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-11" name="else" tns:priority="4" >
-      <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >eval(true)</conditionExpression>
+    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-11" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-11" name="constraint" tns:priority="1" >
+      <conditionExpression xsi:type="tFormalExpression" >return true;</conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_jbpm-unique-11-_jbpm-unique-12" sourceRef="_jbpm-unique-11" targetRef="_jbpm-unique-12" />
 
@@ -84,8 +84,6 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-11" >
         <di:waypoint x="665" y="99" />
-        <di:waypoint x="56" y="99" />
-        <di:waypoint x="56" y="415" />
         <di:waypoint x="666" y="415" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-11-_jbpm-unique-12" >
