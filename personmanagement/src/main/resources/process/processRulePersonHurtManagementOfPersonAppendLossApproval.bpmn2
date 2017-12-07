@@ -17,30 +17,16 @@
     <!-- nodes -->
     <startEvent id="_jbpm-unique-4" name="Start"  isInterrupting="false">
     </startEvent>
-    <businessRuleTask id="_jbpm-unique-5" name="初始化" g:ruleFlowGroup="processRulePersonHurtManagementOfPersonAppendLossApprovalInit" >
-      <ioSpecification>
-        <inputSet>
-        </inputSet>
-        <outputSet>
-        </outputSet>
-      </ioSpecification>
-    </businessRuleTask>
-    <businessRuleTask id="_jbpm-unique-6" name="人伤追加定损" g:ruleFlowGroup="processRulePersonHurtManagementOfPersonAppendLossApprovalInitAfter" >
-      <ioSpecification>
-        <inputSet>
-        </inputSet>
-        <outputSet>
-        </outputSet>
-      </ioSpecification>
-    </businessRuleTask>
     <endEvent id="_jbpm-unique-7" name="End" >
         <terminateEventDefinition />
     </endEvent>
+    <scriptTask id="_jbpm-unique-1" name="Script" scriptFormat="http://www.java.com/java" >
+      <script>System.out.println("fsdfsdf");</script>
+    </scriptTask>
 
     <!-- connections -->
-    <sequenceFlow id="_jbpm-unique-4-_jbpm-unique-5" sourceRef="_jbpm-unique-4" targetRef="_jbpm-unique-5" />
-    <sequenceFlow id="_jbpm-unique-5-_jbpm-unique-6" sourceRef="_jbpm-unique-5" targetRef="_jbpm-unique-6" />
-    <sequenceFlow id="_jbpm-unique-6-_jbpm-unique-7" sourceRef="_jbpm-unique-6" targetRef="_jbpm-unique-7" />
+    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-7" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-7" />
+    <sequenceFlow id="_jbpm-unique-4-_jbpm-unique-1" sourceRef="_jbpm-unique-4" targetRef="_jbpm-unique-1" />
 
   </process>
 
@@ -49,26 +35,19 @@
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-4" >
         <dc:Bounds x="203" y="4" width="48" height="48" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-5" >
-        <dc:Bounds x="190" y="77" width="80" height="48" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-6" >
-        <dc:Bounds x="190" y="304" width="80" height="48" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-7" >
         <dc:Bounds x="204" y="381" width="48" height="48" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-4-_jbpm-unique-5" >
-        <di:waypoint x="227" y="28" />
-        <di:waypoint x="230" y="101" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-5-_jbpm-unique-6" >
-        <di:waypoint x="230" y="101" />
-        <di:waypoint x="230" y="328" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-6-_jbpm-unique-7" >
-        <di:waypoint x="230" y="328" />
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-1" >
+        <dc:Bounds x="239" y="232" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-7" >
+        <di:waypoint x="279" y="256" />
         <di:waypoint x="228" y="405" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-4-_jbpm-unique-1" >
+        <di:waypoint x="227" y="28" />
+        <di:waypoint x="279" y="256" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
