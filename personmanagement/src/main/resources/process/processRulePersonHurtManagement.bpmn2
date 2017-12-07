@@ -22,8 +22,6 @@
     <!-- nodes -->
     <startEvent id="_jbpm-unique-0" name="Start"  isInterrupting="false">
     </startEvent>
-    <exclusiveGateway id="_jbpm-unique-1" name="Gateway" gatewayDirection="Diverging" >
-    </exclusiveGateway>
     <callActivity id="_jbpm-unique-3" name="人伤追加定损规则流" calledElement="processRulePersonHurtManagementOfPersonAppendLossApproval" >
       <ioSpecification>
         <inputSet>
@@ -32,22 +30,13 @@
         </outputSet>
       </ioSpecification>
     </callActivity>
-    <exclusiveGateway id="_jbpm-unique-11" name="Gateway" gatewayDirection="Converging" >
-    </exclusiveGateway>
     <endEvent id="_jbpm-unique-12" name="End" >
         <terminateEventDefinition />
     </endEvent>
 
     <!-- connections -->
-    <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-1" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-1" />
-    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-3" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-3" name="人伤追加定损" tns:priority="1" >
-      <conditionExpression xsi:type="tFormalExpression" >return ruleXOMHelper.inPutXom.taskCatalog.equals("PersonAppendLossApproval");</conditionExpression>
-    </sequenceFlow>
-    <sequenceFlow id="_jbpm-unique-3-_jbpm-unique-11" sourceRef="_jbpm-unique-3" targetRef="_jbpm-unique-11" />
-    <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-11" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-11" name="constraint" tns:priority="1" >
-      <conditionExpression xsi:type="tFormalExpression" >return true;</conditionExpression>
-    </sequenceFlow>
-    <sequenceFlow id="_jbpm-unique-11-_jbpm-unique-12" sourceRef="_jbpm-unique-11" targetRef="_jbpm-unique-12" />
+    <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-3" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-3" />
+    <sequenceFlow id="_jbpm-unique-3-_jbpm-unique-12" sourceRef="_jbpm-unique-3" targetRef="_jbpm-unique-12" />
 
   </process>
 
@@ -56,38 +45,18 @@
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-0" >
         <dc:Bounds x="638" y="10" width="48" height="48" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-1" >
-        <dc:Bounds x="641" y="75" width="48" height="48" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-3" >
         <dc:Bounds x="124" y="249" width="110" height="48" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-11" >
-        <dc:Bounds x="642" y="391" width="48" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-12" >
         <dc:Bounds x="646" y="471" width="48" height="48" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-1" >
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-3" >
         <di:waypoint x="662" y="34" />
-        <di:waypoint x="665" y="99" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-3" >
-        <di:waypoint x="665" y="99" />
-        <di:waypoint x="179" y="99" />
         <di:waypoint x="179" y="273" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-3-_jbpm-unique-11" >
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-3-_jbpm-unique-12" >
         <di:waypoint x="179" y="273" />
-        <di:waypoint x="178" y="415" />
-        <di:waypoint x="666" y="415" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-11" >
-        <di:waypoint x="665" y="99" />
-        <di:waypoint x="666" y="415" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-11-_jbpm-unique-12" >
-        <di:waypoint x="666" y="415" />
         <di:waypoint x="670" y="495" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
