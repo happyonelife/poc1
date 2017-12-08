@@ -12,47 +12,63 @@
              xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
              xmlns:tns="http://www.jboss.org/drools">
 
-  <process processType="Private" isExecutable="true" id="main" name="mainprocess" tns:packageName="com.sinosoft.processrule" >
+  <process processType="Private" isExecutable="true" id="processRulePersonHurtManagementOfPersonLossVerify" name="processRulePersonHurtManagementOfPersonLossVerify" tns:packageName="com.sinosoft.rule" >
 
     <!-- nodes -->
     <startEvent id="_jbpm-unique-0" name="Start"  isInterrupting="false">
     </startEvent>
-    <callActivity id="_jbpm-unique-1" name="人伤管理1" calledElement="processRulePersonHurtManagement" >
+    <businessRuleTask id="_jbpm-unique-1" name="初始化" g:ruleFlowGroup="processRulePersonHurtManagementOfPersonLossVerifyInit" >
       <ioSpecification>
         <inputSet>
         </inputSet>
         <outputSet>
         </outputSet>
       </ioSpecification>
-    </callActivity>
-    <endEvent id="_jbpm-unique-2" name="End" >
+    </businessRuleTask>
+    <businessRuleTask id="_jbpm-unique-2" name="人伤核损" g:ruleFlowGroup="processRulePersonHurtManagementOfPersonLossVerifyInitAfter" >
+      <ioSpecification>
+        <inputSet>
+        </inputSet>
+        <outputSet>
+        </outputSet>
+      </ioSpecification>
+    </businessRuleTask>
+    <endEvent id="_jbpm-unique-3" name="End" >
         <terminateEventDefinition />
     </endEvent>
 
     <!-- connections -->
     <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-1" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-1" />
     <sequenceFlow id="_jbpm-unique-1-_jbpm-unique-2" sourceRef="_jbpm-unique-1" targetRef="_jbpm-unique-2" />
+    <sequenceFlow id="_jbpm-unique-2-_jbpm-unique-3" sourceRef="_jbpm-unique-2" targetRef="_jbpm-unique-3" />
 
   </process>
 
   <bpmndi:BPMNDiagram>
-    <bpmndi:BPMNPlane bpmnElement="main" >
+    <bpmndi:BPMNPlane bpmnElement="processRulePersonHurtManagementOfPersonLossVerify" >
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-0" >
-        <dc:Bounds x="368" y="66" width="48" height="48" />
+        <dc:Bounds x="204" y="29" width="48" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-1" >
-        <dc:Bounds x="341" y="164" width="137" height="48" />
+        <dc:Bounds x="189" y="110" width="80" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-2" >
-        <dc:Bounds x="375" y="254" width="48" height="48" />
+        <dc:Bounds x="192" y="204" width="80" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-3" >
+        <dc:Bounds x="211" y="281" width="48" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-1" >
-        <di:waypoint x="392" y="90" />
-        <di:waypoint x="409" y="188" />
+        <di:waypoint x="228" y="53" />
+        <di:waypoint x="229" y="134" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-1-_jbpm-unique-2" >
-        <di:waypoint x="409" y="188" />
-        <di:waypoint x="399" y="278" />
+        <di:waypoint x="229" y="134" />
+        <di:waypoint x="232" y="228" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-2-_jbpm-unique-3" >
+        <di:waypoint x="232" y="228" />
+        <di:waypoint x="235" y="305" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
