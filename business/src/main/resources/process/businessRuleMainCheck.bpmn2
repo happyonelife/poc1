@@ -15,8 +15,8 @@
   <process processType="Private" isExecutable="true" id="businessRuleMainCheck" name="businessRuleMainCheck" tns:packageName="com.sinosoft.businessrule" >
 
     <extensionElements>
-     <tns:import name="com.sinosoft.bpm.rule.bean.model.RuleProcessOutputXOM" />
      <tns:import name="com.sinosoft.bpm.rule.bean.model.RuleProcessInputXOM" />
+     <tns:import name="com.sinosoft.bpm.rule.bean.model.RuleProcessOutputXOM" />
      <tns:global identifier="ruleXOMHelper" type="cn.sinosoft.processrule.helper.DealingProcessRuleXOM" />
     </extensionElements>
     <!-- nodes -->
@@ -45,6 +45,9 @@
     <endEvent id="_jbpm-unique-20" name="End" >
         <terminateEventDefinition />
     </endEvent>
+    <scriptTask id="_jbpm-unique-0" name="Script" scriptFormat="http://www.java.com/java" >
+      <script>System.out.println("查勘判定简易");</script>
+    </scriptTask>
 
     <!-- connections -->
     <sequenceFlow id="_jbpm-unique-15-_jbpm-unique-16" sourceRef="_jbpm-unique-15" targetRef="_jbpm-unique-16" />
@@ -59,8 +62,9 @@
       <conditionExpression xsi:type="tFormalExpression" >return !(ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("2")||
 ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("1"));</conditionExpression>
     </sequenceFlow>
-    <sequenceFlow id="_jbpm-unique-18-_jbpm-unique-19" sourceRef="_jbpm-unique-18" targetRef="_jbpm-unique-19" />
+    <sequenceFlow id="_jbpm-unique-0-_jbpm-unique-19" sourceRef="_jbpm-unique-0" targetRef="_jbpm-unique-19" />
     <sequenceFlow id="_jbpm-unique-19-_jbpm-unique-20" sourceRef="_jbpm-unique-19" targetRef="_jbpm-unique-20" />
+    <sequenceFlow id="_jbpm-unique-18-_jbpm-unique-0" sourceRef="_jbpm-unique-18" targetRef="_jbpm-unique-0" />
 
   </process>
 
@@ -83,6 +87,9 @@ ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("1"));</conditionExpr
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_jbpm-unique-20" >
         <dc:Bounds x="402" y="288" width="48" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_jbpm-unique-0" >
+        <dc:Bounds x="599" y="333" width="80" height="48" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-15-_jbpm-unique-16" >
         <di:waypoint x="419" y="31" />
@@ -109,13 +116,17 @@ ruleXOMHelper.inPutXom.ruleInputCommon.businessCode.equals("1"));</conditionExpr
         <di:waypoint x="189" y="236" />
         <di:waypoint x="424" y="236" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-18-_jbpm-unique-19" >
-        <di:waypoint x="529" y="170" />
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-0-_jbpm-unique-19" >
+        <di:waypoint x="639" y="357" />
         <di:waypoint x="424" y="236" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-19-_jbpm-unique-20" >
         <di:waypoint x="424" y="236" />
         <di:waypoint x="426" y="312" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_jbpm-unique-18-_jbpm-unique-0" >
+        <di:waypoint x="529" y="170" />
+        <di:waypoint x="639" y="357" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
