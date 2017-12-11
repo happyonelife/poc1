@@ -31,7 +31,7 @@
     <scriptTask id="_jbpm-unique-5" name="日志" scriptFormat="http://www.java.com/java" >
       <script>System.out.println("车辆管理");</script>
     </scriptTask>
-    <callActivity id="_jbpm-unique-0" name="风险" >
+    <callActivity id="_jbpm-unique-0" name="风险" calledElement="riskprocess" >
       <ioSpecification>
         <inputSet>
         </inputSet>
